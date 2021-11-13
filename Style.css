@@ -1,0 +1,249 @@
+:root {
+  --body-bg-color: #dce4e3;
+  --green: #18c29c;
+  --light-green: #8ed7c6;
+	--light-grey: #dce4e3;
+  --text-color: #084236;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+
+.sidebar{
+  display: flex;
+  width: 3.5vw;
+  flex-direction:column ;
+  position: relative;
+  background-color: var(--green);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+
+.sidebar.active{
+  width: 15vw;
+}
+
+.sidebar .menu{
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  height: 4.625rem;
+}
+
+
+.sidebar .menu .logo{
+ 
+  transition: all 0.5s ease;
+  left: 1.3rem;
+  top: 2rem;
+  position: absolute;
+  z-index: -2
+  
+
+}
+
+.sidebar.active .menu .logo{
+  z-index: 1;
+}
+
+.sidebar .menu #menuBttn{
+  
+  transition:  all 0.5s ease;
+  top: 2rem;
+  left: 1.3rem;
+  position: absolute;
+
+}
+
+.sidebar.active .menu #menuBttn{
+  left: 13rem;
+}
+
+.sidebar .search{
+  display: flex;
+  margin-left: 0.6rem;
+  position: relative;
+  transition: 0.5s ease;
+  
+}
+
+.sidebar.active .search{
+  margin-left: 0.8rem;
+}
+
+.sidebar .search div{
+  height: 3rem;
+  z-index: 99;
+  width: 3rem;
+  border-radius: 0.75rem;
+  position: relative;
+  background-color: var(--light-grey);
+}
+
+.sidebar.active .search div{
+  background-color: var(--light-green);
+}
+
+
+
+
+.sidebar .search div #searchBttn{
+  position: absolute;
+  z-index: 99;
+  top: 0.75rem;
+  left: 0.75rem;
+
+}
+
+.sidebar .search .searchbar{
+  position: absolute;
+  
+  height: 3rem;
+  padding-left: 3.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--light-green);
+  border-radius: 0.75rem;
+  transition: all 0.5s ease;
+  z-index: -2;
+  width: 0;
+}
+
+
+.sidebar.active .search .searchbar{
+  z-index: 1;
+  width: 11rem;
+}
+
+.sidebar .search .searchbar::-webkit-input-placeholder{
+  font-family:'Poppins', sans-serif;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+
+.sidebar ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 2rem;
+  margin-top: 2rem;
+  
+}
+
+.sidebar ul li {
+  margin-left: 1.35rem;
+  display: flex;
+  
+}
+
+.sidebar.active ul li{
+  margin-left: 1.5rem;
+}
+
+.sidebar ul li span{
+  margin-left: 1rem;
+  z-index: -2;
+}
+
+.sidebar.active ul li span{
+  z-index: 1;
+}
+
+.sidebar .profileContent{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  bottom: 0;
+  min-height: 4rem;
+  background-color: var(--light-green);
+  width: 3.5vw;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .profileContent{
+  width: 13vw;
+}
+
+
+.sidebar .profileContent .profilePhoto{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  position: absolute;
+  left: 0.7rem;
+  transition: all 0.5s ease;
+  z-index: -2;
+  
+}
+
+.sidebar.active .profileContent .profilePhoto{
+  z-index: 1;
+
+
+}
+
+.sidebar .profileContent .nameJob{
+  position: absolute;
+  left: 4rem;
+  transition: all 0.5s ease;
+  z-index: -2;
+}
+
+.sidebar.active .profileContent .nameJob{
+  z-index: 0;
+}
+
+
+.sidebar .profileContent .nameJob .name{
+  font-weight: 400;
+  line-height: 1rem;
+  
+}
+
+
+
+.sidebar .profileContent .nameJob .job{
+  font-size: 0.9rem;
+  
+}
+
+.sidebar .profileContent .logout{
+  transition: 0.5s ;
+  position: absolute;
+  left: 1.3rem;
+}
+
+.sidebar.active .profileContent .logout{
+  left: 13rem;
+}
+
+
+main{
+  background-color: var(--body-bg-color);
+  display: flex;
+  flex-basis: 100vw; 
+}
+
+main.active {
+  width: 96.5vw;
+}
+
+main h1{
+  margin-left: 1rem;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
